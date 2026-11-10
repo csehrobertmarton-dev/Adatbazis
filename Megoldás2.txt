@@ -1,0 +1,25 @@
+Cseh Róbert Márton
+
+66. SELECT orszag FROM orszagok WHERE nep_fovaros/nepesseg = (SELECT MAX(nep_fovaros/nepesseg) FROM orszagok);
+
+67. SELECT COUNT(orszag) FROM orszagok WHERE nep_fovaros > (nepesseg - nep_fovaros);
+
+68. SELECT COUNT(orszag) FROM orszagok WHERE terulet LIKE "%.00%";
+
+69. SELECT COUNT(orszag) FROM orszagok WHERE orszag LIKE "%SZIGETEK%";
+
+70. SELECT orszag FROM orszagok WHERE BINARY penznem = "euro" AND foldr_hely LIKE "%európa";
+
+71. SELECT SUM(terulet) FROM orszagok WHERE orszag LIKE "%ORSZÁG%";
+
+72. SELECT orszag FROM orszagok WHERE id = telefon;
+
+73. SELECT orszag FROM orszagok WHERE valtopenz = "5 khoum";
+
+74. SELECT orszag, allamforma FROM orszagok WHERE allamforma <> "köztársaság" AND allamforma LIKE "%köztársaság%";
+
+75. SELECT orszag FROM orszagok WHERE autojel = "" AND (nepesseg*100) > 8000000;
+
+76. SELECT COUNT(orszag) FROM orszagok WHERE foldr_hely LIKE "%andok%";
+
+78! SELECT orszag FROM orszagok WHERE foldr_hely LIKE "%szigetország%" AND terulet = (SELECT MIN(terulet) FROM orszagok);
