@@ -22,4 +22,78 @@ Cseh Róbert Márton
 
 76. SELECT COUNT(orszag) FROM orszagok WHERE foldr_hely LIKE "%andok%";
 
-78! SELECT orszag FROM orszagok WHERE foldr_hely LIKE "%szigetország%" AND terulet = (SELECT MIN(terulet) FROM orszagok);
+78. SELECT orszag FROM orszagok WHERE foldr_hely LIKE "%szigetország%" AND terulet = (SELECT MIN(terulet) FROM orszagok);
+
+79. SELECT orszag FROM orszagok WHERE gdp/(nepesseg*100) = (SELECT MAX(gdp/nepesseg*100) FROM orszagok) AND foldr_hely LIKE "%Kis-Antillák";
+
+80. SELECT COUNT(orszag) FROM orszagok WHERE foldr_hely LIKE "Közép-Ázsia%";
+
+81. ???
+
+82. SELECT COUNT(orszag) FROM orszagok WHERE foldr_hely LIKE "%európa%" AND NOT penznem = "euró";
+
+83. SELECT MAX(nepesseg*100) FROM orszagok WHERE foldr_hely LIKE "%Indokinai-félsziget%";
+
+84. SELECT COUNT(orszag) FROM orszagok WHERE foldr_hely LIKE "%Balkán%";
+
+85. SELECT MIN(nepesseg) from orszagok WHERE foldr_hely LIKE "%Baltikum%";
+
+86. SELECT COUNT(orszag) FROM orszagok WHERE penznem = "CFA-frank";
+
+87. SELECT orszag, COUNT(orszag) FROM orszagok WHERE penzjel = "ZAR";
+
+88. select COUNT(orszag) FROM orszagok WHERE penznem LIKE "%dollár%" AND penzjel <> "USD";
+
+89. select COUNT(orszag) FROM orszagok WHERE valtopenz = "100 eurocent";
+
+90. select orszag FROM orszagok WHERE telefon = "7";
+
+91. select orszag FROM orszagok WHERE penzjel = "INR" AND penznem = "ngultrum";
+
+92. select count(orszag) FROM orszagok WHERE valtopenz like "%piaszter%";
+
+93. select orszag FROM orszagok WHERE valtopenz = "10 hao";
+
+94. select count(orszag) FROM orszagok WHERE penznem like "%dinár%";
+
+95. select orszag FROM orszagok WHERE penznem = "cruzeiro real";
+
+96. SELECT orszag FROM orszagok WHERE (SELECT MAX((nepesseg*100)/gdp) FROM orszagok) GROUP BY (SELECT MAX((nepesseg*100)/gdp) FROM orszagok) DESC;
+
+97. SELECT orszag FROM orszagok WHERE (SELECT MIN((nepesseg*100)/gdp) FROM orszagok) GROUP BY (SELECT MIN((nepesseg*100)/gdp) FROM orszagok) ASC;
+
+98. SELECT COUNT(orszag) FROM orszagok WHERE gdp = "0";
+
+99. ???
+
+100. SELECT orszag FROM orszagok ORDER BY lenght(orszag) LIMIT 1
+
+101. SELECT orszag FROM orszagok WHERE fovaros = capital;
+
+102. SELECT COUNT(orszag) from orszagok WHERE telefon = "0";
+
+103. SELECT orszag FROM orszagok WHERE kat = "3" ORDER BY terulet DESC LIMIT 1;
+
+104. SELECT orszag FROM orszagok WHERE kat = "1" ORDER BY nepesseg DESC LIMIT 1;
+
+105. SELECT COUNT(orszag) FROM orszagok WHERE autojel LIKE "_";
+
+106. SELECT orszag, (nep_fovaros/terulet) as népsűrűség FROM orszagok WHERE foldr_hely LIKE "%törpeállam%" ORDER BY népsűrűség DESC LIMIT 1;
+
+107. SELECT COUNT(orszag) FROM orszagok WHERE BINARY country = BINARY orszag;
+
+108. SELECT orszag FROM orszagok WHERE fovaros = "Pozsony" AND capital = "BRATISLAVA POZSONY";
+
+109. SELECT COUNT(orszag) FROM orszagok WHERE nepesseg*100 > 50000 AND gdp < 1000;
+
+110. SELECT orszag FROM orszagok WHERE valtopenz = "100 erocent";
+
+111. SELECT COUNT(orszag) FROM orszagok WHERE allamforma = "alkotmányos monarchia";
+
+112. SELECT orszag FROM orszagok WHERE penznem = "zadre";
+
+113. SELECT COUNT(orszag) FROM orszagok WHERE allamforma = "szövetségi köztársaság" AND gdp > "20000";
+
+114. SELECT orszag FROM orszagok WHERE orszag = "KONGÓI KÖZTÁRSASÁG" AND country = "FRANCIA KONGOI KOZTARSASAG";
+
+115. SELECT SUM(nepesseg*100) FROM orszagok WHERE penzjel = "EUR";
